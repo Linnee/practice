@@ -7,18 +7,19 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        <Label Name="Title" Content="Регистрация" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="36"/>
-        <TextBox Name="Login" HorizontalAlignment="Center" Margin="0,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center">
+
+        <Label Name="Title" Content="Регистрация" HorizontalAlignment="Left" Margin="312,30,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="36"/>
+        <TextBox Name="Login" HorizontalAlignment="Left" Margin="242,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <Label Content="Логин" HorizontalAlignment="Left" Margin="173,103,0,0" VerticalAlignment="Top"/>
-        <Label Content="Пароль" HorizontalAlignment="Left" Margin="169,164,0,0" VerticalAlignment="Top"/>
-        <Button Content="Зарегестрироваться" HorizontalAlignment="Center" Margin="0,282,0,0" VerticalAlignment="Top" Width="340" Height="37" Click="Button_Click" />
-        <PasswordBox Name="Password" HorizontalAlignment="Center" Margin="0,158,0,0" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center">
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="185,107,0,0" VerticalAlignment="Top"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="181,168,0,0" VerticalAlignment="Top"/>
+        <Button Content="Зарегестрироваться" HorizontalAlignment="Left" Margin="242,286,0,0" VerticalAlignment="Top" Width="340" Height="37" Click="Button_Click" />
+        <PasswordBox Name="Password" HorizontalAlignment="Left" Margin="242,162,0,0" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center">
             <PasswordBox.Style>
                 <Style TargetType="{x:Type PasswordBox}">
                     <Style.Resources>
@@ -58,7 +59,7 @@
                 </Style>
             </PasswordBox.Style>
         </PasswordBox>
-        <PasswordBox Name="PasswordRetry" HorizontalAlignment="Center" Margin="0,221,0,0" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center">
+        <PasswordBox Name="PasswordRetry" HorizontalAlignment="Left" Margin="242,225,0,0" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center">
             <PasswordBox.Style>
                 <Style TargetType="{x:Type PasswordBox}">
                     <Style.Resources>
@@ -98,8 +99,8 @@
                 </Style>
             </PasswordBox.Style>
         </PasswordBox>
-        <Label Content="Повторите пароль" HorizontalAlignment="Left" Margin="110,227,0,0" VerticalAlignment="Top"/>
-        <Button Content="Авторизоваться" HorizontalAlignment="Center" Margin="0,335,0,0" VerticalAlignment="Top" Width="340" Height="37" Click="Button_Click1" />
+        <Label Content="Повторите пароль" HorizontalAlignment="Left" Margin="122,231,0,0" VerticalAlignment="Top"/>
+        <Button Content="Авторизоваться" HorizontalAlignment="Left" Margin="242,339,0,0" VerticalAlignment="Top" Width="340" Height="37" Click="Button_Click1" />
 
     </Grid>
 </Window>

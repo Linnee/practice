@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using MySql.Data.MySqlClient;
 namespace shop
 {
     /// <summary>
@@ -22,12 +22,45 @@ namespace shop
         public Window1()
         {
             InitializeComponent();
+            
+            
+            
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            MySqlConnection mysql_connection = App.GetConnection();
+            MySqlCommand mysql_query = mysql_connection.CreateCommand();
+            MySqlDataReader mysql_result;
+            if (Password.Password == PasswordRetry.Password)
+            {
+                bool exist = false;
+                mysql_query.CommandText = "Select * from manager WHERE login='" + Login.Text + "'AND password='" + Password.Password + "' LIMIT 1;";
+                mysql_connection.Open();
+                mysql_result = mysql_query.ExecuteReader();
+                
+                while (mysql_result.Read())
+                {
+                    if (Login.Text == mysql_result.GetString(1) && Password.Password == mysql_result.GetString(2))
+                    {
+                        exist=true;
+                    }
+                }
+                
+                mysql_connection.Close();
+                if (!exist)
+                {
+                    mysql_query.CommandText = "INSERT INTO `manager`(`id`, `login`, `password`) VALUES ('','" + Login.Text + "','" + Password.Password + "');";
+                    mysql_connection.Open();
+                    mysql_query.ExecuteReader();
+                    mysql_connection.Close();
+                }
+            }
+
+           
         }
+  
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
