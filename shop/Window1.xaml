@@ -5,21 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:shop"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Title="Window1" Height="517" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="767*"/>
+        </Grid.ColumnDefinitions>
 
-        <Label Name="Title" Content="Регистрация" HorizontalAlignment="Left" Margin="312,30,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="36"/>
-        <TextBox Name="Login" HorizontalAlignment="Left" Margin="242,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center">
+        <Label Name="Title" Content="Регистрация" HorizontalAlignment="Left" Margin="279,30,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="36" Grid.Column="1"/>
+        <TextBox Name="Login" HorizontalAlignment="Left" Margin="209,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center" Grid.Column="1">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <Label Content="Логин" HorizontalAlignment="Left" Margin="185,107,0,0" VerticalAlignment="Top"/>
-        <Label Content="Пароль" HorizontalAlignment="Left" Margin="181,168,0,0" VerticalAlignment="Top"/>
-        <Button Content="Зарегестрироваться" HorizontalAlignment="Left" Margin="242,286,0,0" VerticalAlignment="Top" Width="340" Height="37" Click="Button_Click" />
-        <PasswordBox Name="Password" HorizontalAlignment="Left" Margin="242,162,0,0" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center">
+        <Label Content="Email" HorizontalAlignment="Left" Margin="152,107,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="148,168,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="Зарегестрироваться" HorizontalAlignment="Left" Margin="209,344,0,0" VerticalAlignment="Top" Width="340" Height="37" Click="Button_Click" Grid.Column="1" />
+        <PasswordBox Name="Password" HorizontalAlignment="Left" Margin="209,162,0,0" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center" Grid.Column="1">
             <PasswordBox.Style>
                 <Style TargetType="{x:Type PasswordBox}">
                     <Style.Resources>
@@ -59,7 +64,7 @@
                 </Style>
             </PasswordBox.Style>
         </PasswordBox>
-        <PasswordBox Name="PasswordRetry" HorizontalAlignment="Left" Margin="242,225,0,0" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center">
+        <PasswordBox Name="PasswordRetry" HorizontalAlignment="Left" Margin="209,225,0,0" VerticalAlignment="Top" Width="340" Height="38" FontSize="16" VerticalContentAlignment = "Center" Grid.Column="1">
             <PasswordBox.Style>
                 <Style TargetType="{x:Type PasswordBox}">
                     <Style.Resources>
@@ -99,8 +104,28 @@
                 </Style>
             </PasswordBox.Style>
         </PasswordBox>
-        <Label Content="Повторите пароль" HorizontalAlignment="Left" Margin="122,231,0,0" VerticalAlignment="Top"/>
-        <Button Content="Авторизоваться" HorizontalAlignment="Left" Margin="242,339,0,0" VerticalAlignment="Top" Width="340" Height="37" Click="Button_Click1" />
+        <Label Content="Повторите пароль" HorizontalAlignment="Left" Margin="89,231,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="Авторизоваться" HorizontalAlignment="Left" Margin="209,397,0,0" VerticalAlignment="Top" Width="340" Height="37" Click="Button_Click1" Grid.Column="1" />
+        <DatePicker Name="DateBirthday" VerticalContentAlignment="Center" Grid.Column="1" Text="" HorizontalAlignment="Left" Margin="211,278,0,0" VerticalAlignment="Top" Width="340" Height="38">
+            
+            <DatePicker.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                    
+                </Style>
+                <Style TargetType="DatePickerTextBox">
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <TextBox IsReadOnly="True" Text="{Binding Path=SelectedDate, StringFormat = {}{0:dd-MM-yyyy}, 
+RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="89,282,0,0" VerticalAlignment="Top" Grid.Column="1"/>
 
     </Grid>
 </Window>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="shop.Window5"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:shop"
+        mc:Ignorable="d"
+        Title="Изменить" Height="183" Width="406">
+    <Grid>
+        <Label Content="Введите ФИО" HorizontalAlignment="Left" Margin="82,16,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="172,24,0,0" TextWrapping="Wrap" Text="Шашков Кассиан Георгиевич" VerticalAlignment="Top" Width="224"/>
+        <Label Content="Введите номер паспорта" HorizontalAlignment="Left" Margin="24,41,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="172,48,0,0" TextWrapping="Wrap" Text="1234" VerticalAlignment="Top" Width="222"/>
+        <Label Content="Введите инвентарный номер" HorizontalAlignment="Left" Margin="4,73,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="174,79,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="222"/>
+        <Button Content="Изменить" HorizontalAlignment="Center" Margin="0,136,0,0" VerticalAlignment="Top"/>
+        <Label Content="Введите адрес стадчика" HorizontalAlignment="Left" Margin="30,99,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="174,106,0,0" TextWrapping="Wrap" Text="Смоленская область, город Подольск" VerticalAlignment="Top" Width="222"/>
+
+    </Grid>
+</Window>

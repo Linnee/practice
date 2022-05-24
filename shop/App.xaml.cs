@@ -15,6 +15,8 @@ namespace shop
 
     public partial class App : Application
     {
+        
+        public static string DateFormat = "dd-MM-yyyy";
         public static MySqlConnection mysql_connection;
         public static MySqlConnection GetConnection()
         {
@@ -33,8 +35,8 @@ namespace shop
                 mysql_connection = new MySqlConnection(Connect);
                 MySqlCommand mysql_query = mysql_connection.CreateCommand();
                 mysql_query.CommandText = "" +
-                    "CREATE TABLE IF NOT EXISTS manager (id int AUTO_INCREMENT PRIMARY KEY, login varchar(255), password varchar(255));\n" +
-                    "CREATE TABLE IF NOT EXISTS people ( ФИО_сдатчика varchar(255), №_паспорта_сдатчика int, Адрес_сдатчика varchar(255), Инвентарный_номер_сданной_вещи int, PRIMARY KEY (ФИО_сдатчика) );\n" +
+                    "CREATE TABLE IF NOT EXISTS manager (id int AUTO_INCREMENT PRIMARY KEY, login varchar(255), password varchar(255),birthday date);\n" +
+                    "CREATE TABLE IF NOT EXISTS people ( ФИО_сдатчика varchar(255), №_паспорта_сдатчика int, Адрес_сдатчика varchar(255), Инвентарный_номер_сданной_вещи int);\n" +
                     "CREATE TABLE IF NOT EXISTS items ( Инвентарный_номер_сданной_вещи int AUTO_INCREMENT, Цена int, Дата_сдачи DATE,Дата_переоценки DATE, Дата_продажи DATE, №_паспорта_сдатчика int, PRIMARY KEY (Инвентарный_номер_сданной_вещи) );\n" +
                     "ALTER TABLE people ADD FOREIGN KEY (Инвентарный_номер_сданной_вещи) REFERENCES items (Инвентарный_номер_сданной_вещи);";
                 mysql_connection.Open();
